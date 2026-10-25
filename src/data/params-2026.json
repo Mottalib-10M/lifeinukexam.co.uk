@@ -1,0 +1,375 @@
+{
+ "_lisezmoi": "Tous les paramètres du site vivent ici, jamais en dur (RECETTE §4). Relus sur gov.uk le 2026-10-25 ; contrôlés chaque mois par scripts/update-data.py (frais du Home Office).",
+ "year": 2026,
+ "retrieved_at": "2026-10-25",
+ "sources": {
+  "uk_test": {
+   "url": "https://www.gov.uk/life-in-the-uk-test",
+   "label": {
+    "en": "GOV.UK: Life in the UK Test (booking, what happens at the test, cancellations)"
+   }
+  },
+  "uk_test_day": {
+   "url": "https://www.gov.uk/life-in-the-uk-test/what-happens-test",
+   "label": {
+    "en": "GOV.UK: what happens at the Life in the UK Test"
+   }
+  },
+  "uk_test_cancel": {
+   "url": "https://www.gov.uk/life-in-the-uk-test/cancellations-refunds-complaints",
+   "label": {
+    "en": "GOV.UK: Life in the UK Test cancellations, refunds and complaints"
+   }
+  },
+  "uk_ilr": {
+   "url": "https://www.gov.uk/apply-citizenship-indefinite-leave-to-remain",
+   "label": {
+    "en": "GOV.UK: apply for citizenship if you have indefinite leave to remain"
+   }
+  },
+  "uk_spouse": {
+   "url": "https://www.gov.uk/apply-citizenship-spouse",
+   "label": {
+    "en": "GOV.UK: apply for citizenship if your spouse is a British citizen"
+   }
+  },
+  "uk_eu": {
+   "url": "https://www.gov.uk/settled-status-eu-citizens-families",
+   "label": {
+    "en": "GOV.UK: apply to the EU Settlement Scheme (settled and pre-settled status)"
+   }
+  },
+  "uk_guidance": {
+   "url": "https://www.gov.uk/government/publications/naturalisation-as-a-british-citizen-by-discretion-nationality-policy-guidance",
+   "label": {
+    "en": "Home Office: Naturalisation as a British citizen by discretion, nationality policy guidance (version 16.0, 11 November 2025)"
+   }
+  },
+  "uk_guide_an": {
+   "url": "https://www.gov.uk/government/publications/form-an-guidance",
+   "label": {
+    "en": "Home Office: Guide AN, naturalisation as a British citizen (July 2026)"
+   }
+  },
+  "uk_fees": {
+   "url": "https://www.gov.uk/government/publications/visa-regulations-revised-table",
+   "label": {
+    "en": "Home Office: immigration and nationality fees table (8 October 2026)"
+   }
+  },
+  "uk_priority": {
+   "url": "https://www.gov.uk/faster-decision-visa-settlement",
+   "label": {
+    "en": "GOV.UK: get a faster decision on your visa or settlement application"
+   }
+  },
+  "uk_english": {
+   "url": "https://www.gov.uk/english-language",
+   "label": {
+    "en": "GOV.UK: prove your knowledge of English for citizenship and settling"
+   }
+  },
+  "uk_selt": {
+   "url": "https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt",
+   "label": {
+    "en": "Home Office: prove your English language abilities with a secure English language test (SELT), updated 12 October 2026"
+   }
+  },
+  "uk_ceremony": {
+   "url": "https://www.gov.uk/citizenship-ceremonies",
+   "label": {
+    "en": "GOV.UK: citizenship ceremonies"
+   }
+  },
+  "uk_child": {
+   "url": "https://www.gov.uk/government/publications/register-child-under-18-as-british-citizen-form-mn1",
+   "label": {
+    "en": "Home Office: register a child under 18 as a British citizen (form MN1)"
+   }
+  },
+  "uk_dual": {
+   "url": "https://www.gov.uk/dual-citizenship",
+   "label": {
+    "en": "GOV.UK: dual citizenship"
+   }
+  },
+  "uk_passport": {
+   "url": "https://www.gov.uk/passport-fees",
+   "label": {
+    "en": "GOV.UK: passport fees"
+   }
+  },
+  "uk_ilr_lose": {
+   "url": "https://www.gov.uk/indefinite-leave-to-remain",
+   "label": {
+    "en": "GOV.UK: check if you can get indefinite leave to remain"
+   }
+  },
+  "uk_hc1691": {
+   "url": "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1619-5-march-2026",
+   "label": {
+    "en": "Home Office: Statement of changes to the Immigration Rules HC 1691 (5 March 2026)"
+   }
+  },
+  "uk_earned": {
+   "url": "https://www.gov.uk/government/consultations/earned-settlement",
+   "label": {
+    "en": "Home Office: earned settlement consultation (20 November 2025)"
+   }
+  },
+  "uk_british": {
+   "url": "https://www.gov.uk/british-citizenship",
+   "label": {
+    "en": "GOV.UK: check if you can become a British citizen"
+   }
+  },
+  "uk_passrate": {
+   "url": "https://assets.publishing.service.gov.uk/media/5a7ba82340f0b645ba3c5bae/HO_Transparency_Data_Q3_2013-14_Life_In_The_UK_Test_Data.PDF",
+   "label": {
+    "en": "Home Office transparency data: Life in the United Kingdom tests taken and pass rates, April 2010 to December 2013 (OGL v3.0)"
+   }
+  }
+ },
+ "uk": {
+  "test": {
+   "questions": 24,
+   "minutes": 45,
+   "passCorrect": 18,
+   "passPercent": 75,
+   "fee": 50,
+   "bookAtLeastDaysAhead": 3,
+   "refundIfCancelHours": 72,
+   "refundClaimMonths": 3,
+   "complaintMonths": 3,
+   "complaintReplyWorkingDays": 10,
+   "centresOver": 30,
+   "exemptUnder": 18,
+   "exemptFromAge": 65,
+   "urnSince": "2019-12-17",
+   "brpDeadline": "2026-12-31",
+   "brpMonthsAfterExpiry": 24,
+   "handbook": "Life in the United Kingdom: A Guide for New Residents, 3rd edition",
+   "handbookPublisher": "TSO (The Stationery Office), on behalf of the Life in the UK Advisory Group",
+   "handbookIsbn": "978-0-11-341313-3",
+   "handbookFormats": "book, eBook and audio",
+   "passNote": "gov.uk, What happens at the test: « You must score 75% or more to pass the test », soit 18 sur 24.",
+   "source": "https://www.gov.uk/life-in-the-uk-test",
+   "pageUpdated": "2024-12-04",
+   "passRates": {
+    "_note": "Home Office transparency data Q3 2013-14 (figures supplied by the test provider, not checked in detail by the Home Office). Each sitting counted, retakes included.",
+    "years": [
+     {
+      "period": "April 2010 to March 2011",
+      "taken": 192476,
+      "passed": 140508,
+      "rate": 73,
+      "settlement": 77,
+      "citizenship": 69
+     },
+     {
+      "period": "April 2011 to March 2012",
+      "taken": 167168,
+      "passed": 133761,
+      "rate": 80,
+      "settlement": 83,
+      "citizenship": 76
+     },
+     {
+      "period": "April 2012 to March 2013",
+      "taken": 159084,
+      "passed": 136815,
+      "rate": 86,
+      "settlement": 87,
+      "citizenship": 84
+     },
+     {
+      "period": "April to December 2013",
+      "taken": 102609,
+      "passed": 73940,
+      "rate": 72,
+      "settlement": 74,
+      "citizenship": 69
+     }
+    ],
+    "quarters2013": [
+     {
+      "q": "April to June 2013",
+      "rate": 74
+     },
+     {
+      "q": "July to September 2013",
+      "rate": 74
+     },
+     {
+      "q": "October to December 2013",
+      "rate": 69
+     }
+    ]
+   }
+  },
+  "naturalisation": {
+   "route61": {
+    "years": 5,
+    "maxAbsenceDays": 450,
+    "maxAbsenceLast12m": 90,
+    "ilrHeldMonths": 12,
+    "band": [
+     480,
+     900
+    ],
+    "priorResidenceYears": 2,
+    "bigAbsence": 730,
+    "bigPriorYears": 3
+   },
+   "route62spouse": {
+    "years": 3,
+    "maxAbsenceDays": 270,
+    "maxAbsenceLast12m": 90,
+    "ilrHeldMonths": 0,
+    "band": [
+     300,
+     540
+    ],
+    "priorResidenceYears": 1,
+    "bigAbsence": 450,
+    "bigPriorYears": 2
+   },
+   "discretionWithinDays": 30,
+   "finalYear": {
+    "normal": 90,
+    "discretion": 100,
+    "strongLinks": 180
+   },
+   "minAge": 18,
+   "absenceCounting": "whole-days-only",
+   "absenceCountingQuote": "You must only count whole days' absences from the UK. You must not count the dates of departure and arrival as absences.",
+   "qualifyingStart": "lendemain de la date de demande moins la période (exemple officiel : demande du 1 September 2022 → présence exigée le 2 September 2017 ; Guide AN : reçue le 05/05/2021 → présent le 06/05/2018)",
+   "decisionUsuallyMonths": 6,
+   "biometricsDays": 45,
+   "ceremonyWithinDays": 90,
+   "referees": 2,
+   "refereeKnownYears": 3,
+   "refereeMinAge": 25,
+   "refereeConvictionYears": 10,
+   "falseInfoMaxMonths": 3,
+   "falseInfoMaxFine": 5000,
+   "nhsDebt": 500,
+   "futureAbsenceMonths": 6,
+   "guidanceVersion": "Naturalisation as a British citizen by discretion, version 16.0, published 11 November 2025",
+   "guideAn": "Guide AN, July 2026"
+  },
+  "fees": {
+   "naturalisation": 1709,
+   "ceremony": 130,
+   "registrationAdult": 1540,
+   "registrationChild": 1000,
+   "registrationIrishAdult": 723,
+   "registrationIrishChild": 607,
+   "ilr": 3226,
+   "lifeInUkTest": 50,
+   "oathNotAtCeremony": 5,
+   "renunciation": 513,
+   "rightOfAbode": 589,
+   "review": 513,
+   "statusLetter": 489,
+   "reissuedCertificate": 456,
+   "priority": 500,
+   "priorityWorkingDays": 30,
+   "effective": "2026-10-08",
+   "source": "https://www.gov.uk/government/publications/visa-regulations-revised-table",
+   "sourceFile": "https://assets.publishing.service.gov.uk/media/6a9ff9014e17456e2cdf5167/Fees_Table_08_October_26.ods",
+   "licence": "Open Government Licence v3.0"
+  },
+  "passport": {
+   "adultOnline": 102,
+   "adultPaper": 115.5,
+   "childOnline": 66.5,
+   "source": "https://www.gov.uk/passport-fees"
+  },
+  "english": {
+   "level": "B1",
+   "skills": "speaking and listening",
+   "seltValidYears": 2,
+   "bookWithinDays": 28,
+   "exemptFromAge": 65,
+   "providersUk": [
+    "Trinity College London",
+    "IELTS SELT Consortium",
+    "LanguageCert",
+    "Pearson"
+   ],
+   "providersAbroadExtra": [
+    "PSI Services (UK) Ltd"
+   ],
+   "b1Tests": [
+    {
+     "name": "IELTS Life Skills B1 (Speaking and Listening)",
+     "provider": "IELTS SELT Consortium",
+     "grade": "Pass",
+     "since": "2015-04-06"
+    },
+    {
+     "name": "LanguageCert International ESOL SELT B1 (Speaking and Listening)",
+     "provider": "LanguageCert",
+     "grade": "60/100",
+     "since": "2020-04-03"
+    },
+    {
+     "name": "PTE Home B1",
+     "provider": "Pearson",
+     "grade": "Pass",
+     "since": "2020-05-21"
+    },
+    {
+     "name": "Trinity GESE Grade 5",
+     "provider": "Trinity College London",
+     "grade": "Pass",
+     "since": "2015-04-06"
+    }
+   ],
+   "majorityEnglish": [
+    "Antigua and Barbuda",
+    "Australia",
+    "The Bahamas",
+    "Barbados",
+    "Belize",
+    "British overseas territories",
+    "Canada",
+    "Dominica",
+    "Grenada",
+    "Guyana",
+    "Ireland",
+    "Jamaica",
+    "Malta",
+    "New Zealand",
+    "St Kitts and Nevis",
+    "St Lucia",
+    "St Vincent and the Grenadines",
+    "Trinidad and Tobago",
+    "USA"
+   ],
+   "testsListFile": "https://assets.publishing.service.gov.uk/media/68da41badadf7616351e4b3d/List_of_approved_Secure_English_Language_Tests_taken_in_the_UK+_5_.ods",
+   "centresFile": "https://assets.publishing.service.gov.uk/media/6acc916cec9d3aba1e013bc3/List_of_approved_test_centres_in_the_UK_from_October_2026_09.10.2026.ods",
+   "settlementB2From": "2027-03-26",
+   "settlementB2Note": "HC 1691, paragraphes 5.60 à 5.62 : niveau B2 pour l'installation sur de nombreuses routes à partir du 26 mars 2027 ; la citoyenneté reste au niveau B1."
+  },
+  "settlement": {
+   "ilrLostAfterYearsAbroad": 2,
+   "settledStatusLostAfterYears": 5,
+   "settledStatusSwissYears": 4,
+   "waitOftenYears": 6
+  },
+  "aVenir": [
+   {
+    "sujet": "Earned settlement (ILR porté à 10 ans de base, réforme de la citoyenneté)",
+    "etat": "Consultation ouverte le 20 novembre 2025, close le 12 février 2026 ; aucune règle finale publiée ni en vigueur au 2026-10-25.",
+    "source": "https://www.gov.uk/government/consultations/earned-settlement"
+   },
+   {
+    "sujet": "Anglais B2 pour l'installation (ILR) sur de nombreuses routes",
+    "etat": "HC 1691 du 5 mars 2026 : à partir du 26 mars 2027. La naturalisation reste au B1.",
+    "source": "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1619-5-march-2026"
+   }
+  ]
+ }
+}

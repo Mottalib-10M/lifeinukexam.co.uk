@@ -1,0 +1,11 @@
+---
+/** Attributions required by the licences (RECETTE, audit données-droits du 2026-10-24).
+ * Shown at the foot of every page, embeds included. */
+interface Props { class?: string }
+const { class: cls = 'text-xs text-navy-500' } = Astro.props;
+const OGL = 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/';
+---
+<p class={cls} data-licence-notice>
+  Contains public sector information licensed under the <a class="underline" href={OGL} target="_blank" rel="noopener">Open Government Licence v3.0</a>.
+  Practice questions and explanations written by Radif Partners from the facts of the official handbook, which is Crown copyright and is not reproduced here.
+</p>

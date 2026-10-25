@@ -1,0 +1,30 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { LAST_UPDATED, AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+import { PAGES } from '../../lib/guides';
+import { helpers } from '../../lib/helpers';
+const lang = 'en';
+const h = helpers(lang);
+const n = PAGES.length + 1;
+---
+<PageLayout title="Radif Partners, publisher of Life in UK Exam: who we are" description="Who publishes Life in UK Exam, how its Life in the UK practice questions are written, where every fee and rule comes from, and what it will never sell." lang={lang} jsonLd={[organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
+  <header class="mb-6"><p class="kicker">About</p><h1 class="mt-0 text-3xl font-bold text-navy-900 md:text-4xl">Who is behind {SITE_NAMES[lang]}</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>{SITE_NAMES[lang]} is published by {AUTHOR_NAME}, a company that builds free tools on public rules and public data. This site is for people who live in the United Kingdom and are preparing to settle or to become British: they have a test of {h.T.questions} questions to pass, an English requirement to meet, and a first possible date to apply that depends on every trip they have taken.</p>
+    <h2>What the site does</h2>
+    <p>It offers full mock tests marked like the real one, at {h.need} correct answers out of {h.T.questions}, practice by chapter with each answer explained, and sixteen numbered tests that stay the same so that progress can be measured. Around the test, it works out the first day a naturalisation application meets the residence rules, from your arrival, your settlement date and every trip; it shows how the Home Office guidance treats excess absences; it adds up the official fees for a household; it lists the approved English test centres. Everything is free, without an account or an email address, and what you type stays in your browser.</p>
+    <h2>Where the questions and rules come from</h2>
+    <p>We wrote all {h.num(h.count)} practice questions ourselves, each from a fact stated in Life in the United Kingdom: A Guide for New Residents. The handbook is Crown copyright and sold by its publisher, so no sentence of it is reproduced, and we never present our questions as the official ones. Fees, test rules and residence conditions were read on gov.uk, in the Home Office naturalisation guidance and in the Home Office fees table, and every page links to the official page behind it. The <a href={route('method', lang)}>method page</a> explains how a mock is drawn and how each date is computed.</p>
+    <h2>What we are not</h2>
+    <p>We are not the Home Office, UK Visas and Immigration or the company that runs the test centres, and we are not a law firm or an immigration adviser. We cannot book a test, take an application or look at a case. The site uses no official logo or crest. For advice on your own situation, gov.uk explains who is allowed to give immigration advice.</p>
+    <h2>How the site is paid for</h2>
+    <p>The site sells no course, book, app or legal service, takes no commission and links to no firm that does. If advertising is added one day, it will never sit inside a test, and it cannot use your answers, which never leave your browser.</p>
+    <h2>Tell us when something is wrong</h2>
+    <p>Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with the rule or the first words of the question. The <a href={route('editorial', lang)}>editorial policy</a> explains how a correction is made and dated. The site has {n} pages.</p>
+    <p class="text-sm text-navy-600">Rules and fees last checked on <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-GB')}</time>.</p>
+  </div>
+</PageLayout>

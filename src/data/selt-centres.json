@@ -1,0 +1,588 @@
+{
+"_source": "Home Office, List of approved SELT test centres in the UK (ODS, October 2026), gov.uk, Open Government Licence v3.0",
+"retrieved_at": "2026-10-25",
+"url": "https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt",
+"centres": [
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Belfast",
+"address": "119 Royal Avenue (1st floor), BT1 1FF",
+"city": "Belfast",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC Belfast",
+"address": "C/O MTS Belfast, 2nd floor, Cromac Place, BT7 2JB",
+"city": "Belfast",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Belfast",
+"address": "Belfast South Community Resources, 127-145 Sandy Row, BT12 5ET",
+"city": "Belfast",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Belfast",
+"address": "Forsyth House, Cromac Square (Regus), BT2 8LA",
+"city": "Belfast",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Birmingham",
+"address": "Spaces Crossway, 156 Great Charles Street, Queensway, B3 3HN",
+"city": "Birmingham",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Birmingham",
+"address": "155 Great Charles Street, Queensway, B3 3LP",
+"city": "Birmingham",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC Birmingham",
+"address": "6th Floor, Gateway House, 50-53 High Street, Birmingham, B4 7SY",
+"city": "Birmingham",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "Birmingham VITSPRO",
+"address": "Fairgate House, 205 Kings Road, 2nd Floor, Birmingham, B11 2AA",
+"city": "Birmingham",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC Birmingham - SCCB",
+"address": "South and City College, Hall Green Campus, Cole Bank Road, B28 8ES",
+"city": "Birmingham",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Bradford",
+"address": "Hope Park Business Centre, Coop Place, Rooley Lane, BD5 8JX",
+"city": "Bradford",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Bristol",
+"address": "Pitman Training Bristol, Unit 9, Ground Floor Hide Market, Waterloo Road, St Philips, BS2 0PL",
+"city": "Bristol",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Bristol",
+"address": "Building 340, The Crescent, Bristol Business Park, BS16 1EJ",
+"city": "Bristol",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Bristol",
+"address": "Whitefriars Business Centre, Whitefriars Lewins Mead, BS1 2NT",
+"city": "Bristol",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Cambridge",
+"address": "Second Floor, St Andrews House, 59, St.Andrews Street, CB2 3BZ",
+"city": "Cambridge",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC Cambridge",
+"address": "Anglia Ruskin University, Cambridge Campus, East Road, CB1 1PT",
+"city": "Cambridge",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Cambridge",
+"address": "87-89 Cherry Hinton Road, CB1 7BS",
+"city": "Cambridge",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Cardiff",
+"address": "1 Caspian Point, Caspian Way, CF10 4DQ",
+"city": "Cardiff",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Cardiff",
+"address": "5th Floor, Market Chambers, 5-7 St Mary’s Street, CF10 1AT",
+"city": "Cardiff",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Cardiff",
+"address": "Temple Court, 13a Cathedral Road, CF11 9HA",
+"city": "Cardiff",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC Cardiff - Office",
+"address": "British Council, 1 Kingsway, CF10 3AQ",
+"city": "Cardiff",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Coventry",
+"address": "Earlsdon Park, 53 — 55 Butts Road, Coventry, CVI 3BH",
+"city": "Coventry",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "London South - Croydon",
+"address": "Trinity SELT, AMP House, 4 Dingwall Road, Croydon, London, CR0 2LX",
+"city": "Croydon",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - London South (Croydon)",
+"address": "Bridge Training UK, Challenge House, 616 Mitcham Road, CR0 3AA",
+"city": "Croydon",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centers-Croydon, UK",
+"address": "Mosaic East, Second Floor, Stephenson House, Addiscombe Road, Croydon, CR0 6SR",
+"city": "Croydon",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Edinburgh",
+"address": "16 St. Mary’s Street, EH1 1SU",
+"city": "Edinburgh",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Edinburgh",
+"address": "Cairncross House, 25 Union Street, Edinburgh, EH1 3LR",
+"city": "Edinburgh",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC Edinburgh",
+"address": "9th Floor, Exchange Tower, 19 Canning Street, EH3 8EG",
+"city": "Edinburgh",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Edinburgh",
+"address": "40 Sciennes, Newington, Ground floor, EH9 1NJ",
+"city": "Edinburgh",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Exeter",
+"address": "Brittany House, New North Road, Exeter, EX4 4EP",
+"city": "Exeter",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Glasgow",
+"address": "7 Buchanan Street, 6th Floor, G1 3HL",
+"city": "Glasgow",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC Glasgow",
+"address": "Libertas House, 39 St Vincent Place, G1 2ER",
+"city": "Glasgow",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Glasgow",
+"address": "Libertas House, 39 (6th Floor) St Vincent Place, Glasgow, G1 2ER, G1 2ER",
+"city": "Glasgow",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Glasgow",
+"address": "Suite 325, Pentagon Centre,36-38 Washington Street, G3 8AZ",
+"city": "Glasgow",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "CES Leeds",
+"address": "Centre of English Studies, Trafalgar House, 29 Park Place, Leeds, LS1 2SP",
+"city": "Leeds",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Leeds",
+"address": "Pitman Training - Leeds Media Centre, 21 Savile Mount, LS7 3HZ",
+"city": "Leeds",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Leeds",
+"address": "Pearson Professional Centres, Gallery House 1st Floor, The Headrow, LS1 5RD",
+"city": "Leeds",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Leeds",
+"address": "Ground B, 14 King Street, Leeds, LS1 2HL",
+"city": "Leeds",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Leicester",
+"address": "Voluntary Action LeicesterShire, 9 Newarke Street, Leicester, LE1 5SN",
+"city": "Leicester",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centre - Leicester",
+"address": "Suite 3A Third Floor, Rutland Centre, 56 Halford Street, LE1 1T",
+"city": "Leicester",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Liverpool",
+"address": "Lower Ground Floor, 5 Covent Gardens, L2 8UD",
+"city": "Liverpool",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Liverpool",
+"address": "St John's House, 2 Queens Square, Liverpool, L1 1RH, United Kingdom",
+"city": "Liverpool",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Docklands",
+"address": "3 Quebec Wharf, 14 Thomas Road, Mile End, London, E14 7AF",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - London - City",
+"address": "5–6 Giltspur Street, London, EC1A 9DE, United Kingdom",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "London City",
+"address": "Tobacco Dock, Wapping Lane, London, E1W 2SF",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC London West - EHWLC",
+"address": "Ealing Hammersmith & West London College, Hammersmith Campus, Gliddon Road, Barons Court, Hammersmith, W14 9BL",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "London West - Hammersmith",
+"address": "The Triangle, No 5 - 17 Hammersmith Grove, Hammersmith, W6 0LG",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - London Central",
+"address": "High Holborn House, 52-54 High Holborn, WC1V 6RL",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC London South - WCBT",
+"address": "Winway College of Business and Technology Ltd, 4th Floor, AMP House, 4 Dingwall Road, CR0 2LX",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Southgate",
+"address": "1st Floor Crown House, 47 Chase Side, N14 5BP",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC London Central - IH",
+"address": "International House London, 16 Stukeley Street, WC2B 5LQ",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "London West - Hounslow",
+"address": "Computer Learning Centre, 65 Kingsley Road, Hounslow, TW3 1QB",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-London Southwark",
+"address": "10 Holyrood Street, London, Southwark, SE1 2EL, SE1 2EL",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - London North",
+"address": "Ashley House, 235 - 239 High Road, Wood Green,, N22 8HF",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC London Stratford",
+"address": "British Council, 1 Redman Place, E20 1JQ",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - London West - Chiswick",
+"address": "65 Westcroft Square, W6 0TA",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Kings Cross - London Central",
+"address": "344-354 Grays Inn Road (HQ), Kings Cross, WC1X 8BP",
+"city": "London",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Maidstone",
+"address": "Ground Floor, 4 Tonbridge Road, Maidstone, ME16 8RP",
+"city": "Maidstone",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC Manchester - Connell",
+"address": "Connell Co-Op College, 301 Alan Turing Way, Manchester, M11 3BS",
+"city": "Manchester",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Manchester",
+"address": "Blue Zone, Ground Floor, Suites 3 & 4, Universal Square, Devonshire Street North, M12 6JH",
+"city": "Manchester",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "Manchester Piccadilly",
+"address": "Murray House, 85 Piccadilly, Manchester, M1 2DA",
+"city": "Manchester",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Manchester",
+"address": "ITTS,3rd Floor, universal square, Devonshire St N, Manchester, M12 6JH",
+"city": "Manchester",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Manchester",
+"address": "Peter House (Spaces), Oxford Street, M1 5AN",
+"city": "Manchester",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Milton Keynes",
+"address": "Gloucester House, 399 Silbury Boulevard, Milton Keynes, MK9 2AH",
+"city": "Milton Keynes",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "Newcastle",
+"address": "Unit 9, Bankside, Metro Riverside Park, The Watermark, Gateshead, NE11 9SY",
+"city": "Newcastle Upon Tyne",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Newcastle",
+"address": "Unit 9, Bankside, The Watermark,Metro Riverside Park, Gateshead, NE11 9SY",
+"city": "Newcastle Upon Tyne",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Newcastle",
+"address": "Rotterdam House, 116 Quayside, Newcastle Upon Tyne, NE1 3DY",
+"city": "Newcastle Upon Tyne",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centre - Newcastle",
+"address": "First Floor, Collingwood House, 3 Collingwood Street, NE1 1JW",
+"city": "Newcastle Upon Tyne",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centre - Oxford",
+"address": "Top Floor (Buzzer 9), 58 St Aldates, OX1 1ST",
+"city": "Oxford",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Peterborough",
+"address": "Stuart House (Regus), St Johns Street, PE1 1QF",
+"city": "Peterborough",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Peterborough",
+"address": "Ground Floor, East Wing, Stuart House, St Johns Street, PE1 5DD",
+"city": "Peterborough",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Peterborough",
+"address": "Online Exam Sefton House, Adam Court, Newark Road, PE1 5PP",
+"city": "Peterborough",
+"available": "Available"
+},
+{
+"provider": "IELTS SELT Consortium",
+"name": "BC Portsmouth",
+"address": "Technopole Centre, Kingston Cres, North End,, PO2 8FA",
+"city": "Portsmouth",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Portsmouth",
+"address": "Ground Floor Annex - Enterprise House, Isambard Brunel Road, PO1 2AF",
+"city": "Portsmouth",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Portsmouth",
+"address": "23 Queen Street, PO1 3HN",
+"city": "Portsmouth",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Preston",
+"address": "Trinity SELT, 1a Essex Street, PR1 1QE",
+"city": "Preston",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Preston",
+"address": "95 Lancaster Road, PR1 2QJ",
+"city": "Preston",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Sheffield",
+"address": "The Circle, 33 Rockingham Ln, Sheffield City Centre, S1 4FW",
+"city": "Sheffield",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Sheffield",
+"address": "Floor 5, St James House, Vicar Lane, Sheffield, S1 2EX",
+"city": "Sheffield",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Sheffield",
+"address": "Orchard House, 3rd floor, Leopold Street, S1 2GY",
+"city": "Sheffield",
+"available": "Available"
+},
+{
+"provider": "LanguageCert",
+"name": "LC - Southampton",
+"address": "Pitman Training Ground Floor, 31 Eastgate Street, SO14 3HB",
+"city": "Southampton",
+"available": "Available"
+},
+{
+"provider": "Trinity College London",
+"name": "Stratford - London East",
+"address": "Boardman House 64-70 Broadway Stratford, London, E15 1NG",
+"city": "Stratford",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Uxbridge",
+"address": "Unit 5-7, The Pavilions Shopping Centre, Pantile Walk, UB8 1LP",
+"city": "Uxbridge",
+"available": "Available"
+},
+{
+"provider": "Pearson",
+"name": "Pearson Professional Centres-UK Wolverhampton",
+"address": "2nd Floor Derwent House, 42-46 Waterloo Road, WV1 4XB",
+"city": "Wolverhampton",
+"available": "Available"
+}
+]
+}

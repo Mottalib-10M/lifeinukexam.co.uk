@@ -1,0 +1,21 @@
+{
+ "name": "Life in UK Exam",
+ "short_name": "Life in UK Exam",
+ "description": "Free Life in the UK Test practice: timed mock tests marked at 18 out of 24, questions by chapter, the earliest date to apply for British citizenship and the 2026 Home Office fees.",
+ "start_url": "/en/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#0B4F6C",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+---
+/**
+ * Renders one tool with its page defaults: `quiz` (mock test or practice), `bank` (questions with
+ * answers), `date` (earliest date to apply), `cost`, `centres` (SELT centres), `frise` (timeline, props.preset) or `mini:<spec>`. The
+ * questions a quiz shows first are drawn here, at build time, with a seed from the page id (§17.5).
+ */
+import CitizenQuiz from './calc/CitizenQuiz';
+import QuestionBank, { sampleAll } from './calc/QuestionBank';
+import ResidenceDate from './calc/ResidenceDate';
+import CostTool from './calc/CostTool';
+import SeltCentres from './calc/SeltCentres';
+import MiniSim from './calc/MiniSim';
+import Frise from './ui/Frise';
+import { friseSteps, friseLabels } from '../lib/frise-presets';
+import { route, hasRoute, type Locale } from '../i18n/routes';
+import { getSpec } from '../lib/mini-specs';
+import { BANK } from '../lib/banks-build';
+import { CHAPTERS } from '../lib/banks';
+import { buildExam, buildPractice, numberedSeed, seedOf } from '../lib/engine/exam';
+import type { ToolDef } from '../lib/guide-types';
+interface Props { tool: ToolDef; lang?: Locale; primary?: boolean; idPrefix?: string; seedKey?: string }
+const { tool, lang = 'en', primary = false, idPrefix, seedKey = 'home' } = Astro.props;
+const props = (tool.props ?? {}) as Record<string, any>;
+const kind = tool.kind;
+const sets = Number(props.sets ?? 0);
+const seed = sets ? numberedSeed(1) : seedOf(`${seedKey}-${kind}-${props.chapter ?? ''}`);
+const mode = (props.mode ?? 'exam') as 'exam' | 'practice';
+const chapter: string | null = props.chapter != null ? CHAPTERS[Number(props.chapter)] : null;
+const initial = kind === 'quiz' ? (mode === 'practice' ? buildPractice(BANK, chapter, seed, 10) : buildExam(BANK, seed, CHAPTERS).questions) : [];
+const bankChapter = props.chapter === 'all' ? '' : CHAPTERS[Number(props.chapter ?? 0)];
+const bankInitial = kind === 'bank' ? (bankChapter ? BANK.filter((q) => q.chapter === bankChapter) : sampleAll(BANK)) : [];
+const mini = kind.startsWith('mini:') ? kind.slice(5) : null;
+const spec = mini ? getSpec(mini) : null;
+const href = spec?.ctaPage && hasRoute(spec.ctaPage, lang) ? route(spec.ctaPage, lang) : undefined;
+const numDefaults: Record<string, number> = {};
+for (const [k, v] of Object.entries(props)) if (typeof v === 'number') numDefaults[k] = v;
+---
+{kind === 'quiz' && <CitizenQuiz client:load mode={mode} chapter={chapter} timed={!!props.timed} sets={sets} initial={initial} seed={seed} idPrefix={idPrefix ?? 'q'} />}
+{kind === 'bank' && <QuestionBank client:load chapter={bankChapter} initial={bankInitial} total={BANK.length} idPrefix={idPrefix ?? 'b'} />}
+{kind === 'date' && <ResidenceDate client:load route={props.route ?? '6(1)'} eu={!!props.eu} idPrefix={idPrefix ?? 'd'} />}
+{kind === 'cost' && <CostTool client:load idPrefix={idPrefix ?? 'c'} defaults={numDefaults} />}
+{kind === 'centres' && <SeltCentres client:load city={props.city ?? 'London'} provider={props.provider ?? ''} idPrefix={idPrefix ?? 'sc'} />}
+{mini && <MiniSim client:load kind={mini} href={href} defaults={numDefaults} primary={primary} idPrefix={idPrefix ?? (primary ? 'p' : 'm')} />}
+{kind === 'frise' && <Frise client:visible steps={friseSteps(String(props.preset ?? 'journey'))} labels={friseLabels(String(props.preset ?? 'journey'))} locale="en-GB" id={idPrefix ?? 'frise'} />}

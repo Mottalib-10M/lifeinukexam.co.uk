@@ -1,0 +1,26 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { displayDate } from '../../lib/format';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy of ${SITE_NAMES[lang]}: sources and corrections`} description="Which gov.uk pages and Home Office documents Life in UK Exam relies on, how its practice questions are written, which sources it refuses and how a mistake is corrected." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial and corrections policy</h1>
+    <p>People use these pages to decide when to book a test that costs money and when to send an application that costs much more. A stale fee or a wrong day limit can cost them a refusal, so every figure points back to the official page it was read on.</p>
+    <h2>Who is responsible</h2><p>{AUTHOR_NAME}, reachable at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>What we read</h2>
+    <ul>
+      <li>gov.uk: the Life in the UK Test guide, the citizenship, settlement, ceremony, English language and passport pages;</li>
+      <li>Home Office documents published on gov.uk: the naturalisation nationality guidance, Guide AN, the immigration and nationality fees table, the list of approved English tests and test centres, and statements of changes to the Immigration Rules;</li>
+      <li>for the practice questions, the facts stated in the official handbook, Life in the United Kingdom: A Guide for New Residents.</li>
+    </ul>
+    <h2>How the questions are written</h2><p>Each question takes one fact from the handbook and asks about it in our own words. We never copy a question from an app, a book, another practice site or a real test, and we never present our questions as official.</p>
+    <h2>Sources we refuse</h2><p>Law firms, advisers, book and app publishers and practice sites never supply a figure here. A rule we cannot find on an official page is not published.</p>
+    <h2>Review cycle</h2><p>A script compares the Home Office fees table with our parameter file every month and stops if an amount differs, until a person has checked the rule. Guidance and rules are re-read whenever the Home Office publishes a change; announced reforms are shown as coming, with their date, never as current.</p>
+    <h2>Corrections</h2>
+    <ol><li>We open the official page again.</li><li>We correct the parameter file or the question, and add an automated test for the case.</li><li>The site rebuilds and every page shows the new date.</li></ol>
+    <h2>Independence</h2><p>No law firm, adviser, publisher or government body pays for or reviews what is published here, and the site carries no affiliate link. See also the <a href={route('method', lang)}>method page</a>. Version of <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-GB')}</time>.</p>
+  </div>
+</PageLayout>

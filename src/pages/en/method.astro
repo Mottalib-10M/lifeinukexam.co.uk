@@ -1,0 +1,45 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema, articleSchema } from '../../lib/seo';
+import { helpers } from '../../lib/helpers';
+import { displayDate } from '../../lib/format';
+const lang = 'en';
+const h = helpers(lang);
+const { T, N, F, E } = h;
+const s = (k: Parameters<typeof h.src>[0], t: string) => h.src(k, t);
+---
+<PageLayout title="Life in UK Exam method: questions, marking, dates and fees" description="How Life in UK Exam writes its practice questions, draws and marks a 24-question mock, counts days abroad for naturalisation and adds up the Home Office fees." lang={lang} jsonLd={[articleSchema({ title: 'How the questions, marking, dates and fees are built', description: 'Method of Life in UK Exam', path: route('method', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Method', path: route('method', lang) }])]} breadcrumbs={[{ label: 'Method' }]}>
+  <header class="mb-6"><p class="kicker">Method</p><h1 class="mt-0 text-3xl font-bold text-navy-900 md:text-4xl">How the questions, marking, dates and fees are built</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <p>Every page and every tool reads the same two files: a bank of practice questions and a parameter file of rules and fees read on gov.uk on {h.date(h.P.retrieved_at)}. No pass mark, fee or day limit is typed into a page; when a rule changes, the parameter file changes and every page follows.</p>
+    <h2>1. The questions</h2>
+    <p>The bank holds {h.num(h.count)} questions, {h.chapters.map((c, i) => `${h.inChapter(i)} on "${c}"`).join(', ')}. Each one has a single right answer among four options (or true and false), an explanation, and the handbook chapter where the fact can be checked. The handbook, Life in the United Kingdom: A Guide for New Residents (third edition, published by TSO, ISBN {T.handbookIsbn}), is Crown copyright and not under an open licence, so we use its facts and never its text. Guide AN, the Home Office guide to naturalisation, says the Home Office does not recommend unofficial study guides: this site does not replace the handbook, it tests what you learned from it.</p>
+    <p>We leave out questions whose answer depends on who holds an office today, and facts that changed after the handbook was printed. No question was copied from an app, a book or another site. Automated checks run on every build: unique questions, distinct options, a right answer among them, an explanation and a source for each one, right answers spread across the four positions.</p>
+    <h2>2. How a mock test is drawn and marked</h2>
+    <p>A mock has the length of the real test, {T.questions} questions. The draw takes a share from each of the five chapters, in proportion to the number of questions we hold on it, then shuffles; gov.uk publishes no quota per chapter, so we do not invent one. A seed makes every draw reproducible: the first test of a page is drawn at build time, the sixteen numbered tests always use the same seeds, and a shared link replays the same questions. The mark is the published one: {h.pc(T.passPercent / 100)} or more, which on {T.questions} questions is {h.need}. A practice set of ten uses the same {h.pc(T.passPercent / 100)} as a target and says so. The timer of the timed mock counts {T.minutes} minutes from the first answer.</p>
+    <p>The estimate of a chance to pass, offered on some pages, is a binomial calculation: if each answer is right with the probability you enter, it gives the probability of at least {h.need} right out of {T.questions}. It is a model, not a forecast, and the tool says so.</p>
+    <h2>3. How the earliest date to apply is found</h2>
+    <p>The date calculator tries every day from today, in order, and stops at the first day on which all the residence conditions of a naturalisation application hold (<Fragment set:html={s('uk_guidance', 'nationality guidance, version 16.0')} />, <Fragment set:html={s('uk_ilr', 'gov.uk')} />):</p>
+    <ul>
+      <li>the qualifying period starts the day after the application date minus {N.route61.years} years ({N.route62spouse.years} for a spouse or civil partner), and you must be in the UK on that first day; the guidance's example, an application on 1 September 2022 needing presence on 2 September 2017, is one of our automated tests, as is the gov.uk example of an application received on 20 June 2022 after a trip from 10 to 25 June 2017, which must wait until 24 June 2022;</li>
+      <li>absences in the period are capped at {h.num(N.route61.maxAbsenceDays)} days ({h.num(N.route62spouse.maxAbsenceDays)} for a spouse), and at {N.route61.maxAbsenceLast12m} in the last 12 months; only whole days abroad count, never the day of departure or the day of arrival;</li>
+      <li>indefinite leave to remain or settled status must have been held for {N.route61.ilrHeldMonths} months on the five-year route, and simply held on the spouse route; the applicant must be {N.minAge} or over.</li>
+    </ul>
+    <p>When a value falls within five days of a limit, the result says so: the official count uses your real travel records, and a one-day error in a date you typed can move the result. When total absences are over the limit, the tools name the band of the guidance (over by {N.discretionWithinDays} days or less; {h.num(N.route61.band[0])} to {h.num(N.route61.band[1])} days, or {h.num(N.route62spouse.band[0])} to {h.num(N.route62spouse.band[1])} on the spouse route; beyond) without ever presenting discretion as granted.</p>
+    <h2>4. Fees</h2>
+    <p>Fees come from the Home Office immigration and nationality fees table in force from {h.date(F.effective)} (<Fragment set:html={s('uk_fees', 'fees table')} />): naturalisation {h.gbp(F.naturalisation)}, ceremony {h.gbp(F.ceremony)}, child registration {h.gbp(F.registrationChild)}, indefinite leave to remain {h.gbp(F.ilr)}. The priority service, {h.gbp(F.priority)}, comes from <Fragment set:html={s('uk_priority', 'gov.uk')} />, and passport fees from the HM Passport Office page. Costs that have no official scale, such as an English test or translations, are typed by you and never estimated.</p>
+    <h2>5. English tests and centres</h2>
+    <p>The list of approved tests at {E.level} and the list of approved test centres in the UK come from the two Home Office spreadsheets attached to the <Fragment set:html={s('uk_selt', 'SELT guidance')} />, last updated in October 2026. The centre finder shows the list as published; a provider may not run every test at every centre on every date, which the finder says.</p>
+    <h2>6. Checks and updates</h2>
+    <p>A script re-reads the Home Office fees table every month and stops the update if an amount differs from ours, until a person has read the new rule. Announced changes are shown as coming, with their date: English at B2 for settlement on many routes from {h.date(E.settlementB2From)}, and the earned settlement reform, whose consultation closed on 12 February 2026.</p>
+    <h2>7. What the site does not do</h2>
+    <ul>
+      <li>It does not judge good character, lawful residence, the intention to live in the UK or any discretion: only measurable rules.</li>
+      <li>It does not reproduce or claim to reproduce the official test.</li>
+      <li>It does not book a test or send an application: that is done only on <Fragment set:html={s('uk_test', 'gov.uk')} />.</li>
+    </ul>
+    <p>Method version of <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-GB')}</time>. A figure that looks wrong: <a href={route('contact', lang)}>contact</a>.</p>
+  </div>
+</PageLayout>

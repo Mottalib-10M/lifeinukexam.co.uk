@@ -1,0 +1,102 @@
+---
+/**
+ * Home (pillar page). A full Life in the UK mock test first, then the road from the test to a
+ * British passport in five stages, each with its own small calculator, then the handbook chapter by
+ * chapter and every page of the site. Every figure is read from params-2026.json or the bank.
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import Tool from './Tool.astro';
+import Clamp from './Clamp.astro';
+import Sources from './Sources.astro';
+import { route } from '../i18n/routes';
+import { PAGES } from '../lib/guides';
+import { GROUPS_ORDER, groupLabel } from '../i18n/nav';
+import { helpers } from '../lib/helpers';
+import { LAST_UPDATED, AUTHOR_NAME } from '../data/site-config';
+import { displayDate } from '../lib/format';
+import { faqSchema, webApplicationSchema, websiteSchema, organizationSchema } from '../lib/seo';
+const lang = 'en';
+const h = helpers(lang, true);
+const { T, N, F, E } = h;
+const chapterPage = ['lt-q-values', 'lt-q-uk', 'lt-q-history', 'lt-q-society', 'lt-q-government'];
+const cards = (g: (typeof GROUPS_ORDER)[number]) => PAGES.filter((p) => p.group === g).map((p) => ({ href: route(p.id, lang), name: p.en.nav, text: p.en.card }));
+
+const title = 'Life in the UK Test 2026: Free Mock Tests Marked at 18/24';
+const description = 'Free Life in the UK Test practice: full 24-question mock tests marked at 18, questions by chapter, the first date to apply for citizenship and the 2026 fees.';
+const faqs = [
+  { q: 'How many questions do I need to get right in the Life in the UK Test?', a: `You need ${h.need} correct answers out of ${T.questions}. gov.uk sets the pass at ${h.pc(T.passPercent / 100)} or more, and ${h.pc(T.passPercent / 100)} of ${T.questions} is exactly ${h.need}, so you can get ${T.questions - h.need} questions wrong and still pass. There is no separate mark per chapter: a weak chapter can be made up elsewhere, as long as the total reaches ${h.need}.` },
+  { q: 'Are the questions on this site the ones used in the real test?', a: `No. The official question bank is not published, and the handbook is Crown copyright, so every one of our ${h.num(h.count)} questions was written by ${AUTHOR_NAME} from a fact stated in the handbook, with our own wording and explanation. They train you on the same facts and the same format, and the method page explains how each one is written and checked.` },
+  { q: 'Is the Life in the UK Test hard?', a: `The questions are short and the time is generous: ${T.minutes} minutes for ${T.questions} questions. What makes it hard is the breadth of the handbook, from prehistory to the courts, with many dates and names. Candidates who revise chapter by chapter and then sit several full mocks under time are rarely surprised by the format; the content is what needs work.` },
+  { q: 'How long is a Life in the UK Test pass valid for?', a: 'gov.uk does not set an expiry date for a pass. You receive a unique reference number, which you give in your settlement or citizenship application so the Home Office can check it, and if you passed it for settlement you do not take it again for citizenship. Keep the number safe: it is what the application asks for.' },
+  { q: 'Can I take the Life in the UK Test online at home?', a: `No. The test is sat on a computer at one of more than ${T.centresOver} test centres in the UK, booked through gov.uk at least ${T.bookAtLeastDaysAhead} days ahead, with your original ID checked and your photo taken on the day. What you can do online, for free, is practise: the mocks on this site run in your browser and nothing you answer leaves it.` },
+  { q: 'Do I need the Life in the UK Test for indefinite leave to remain?', a: `For most settlement routes, yes: a pass in the test and English at the required level are part of the knowledge of language and life rules. The pass then counts again when you apply to naturalise. People under ${T.exemptUnder}, people aged ${T.exemptFromAge} or over and people with a long-term physical or mental condition supported by medical evidence are exempt.` },
+  { q: 'What happens after I pass the test?', a: `The test is one requirement among several. To naturalise you also need settled status for long enough, at most ${h.num(N.route61.maxAbsenceDays)} days abroad over ${N.route61.years} years, English at ${E.level}, good character and two referees, then an online application with the fee of ${h.gbp(h.total)} including the ceremony. Our date calculator tells you the first day the residence rules are met.` },
+];
+const jsonLd = [websiteSchema(lang), organizationSchema(lang), webApplicationSchema({ name: 'Life in the UK mock test', description, path: route('home', lang), lang }), faqSchema(faqs, lang)];
+const resume = `The Life in the UK Test is the computer test that most people applying to settle in the UK or to become British citizens must pass. It has ${T.questions} multiple-choice questions, lasts ${T.minutes} minutes and costs ${h.gbp(T.fee)} a sitting, and gov.uk sets the pass at ${h.pc(T.passPercent / 100)}, which means ${h.need} correct answers. Every question comes from the official handbook, Life in the United Kingdom: A Guide for New Residents, third edition, whose five chapters run from British values and the nations of the UK to a long history, modern society, and the government and law. The mock above draws ${T.questions} questions from our bank of ${h.num(h.count)}, written by ${AUTHOR_NAME} from the handbook's facts and spread across the five chapters, then marks the result against ${h.need}. You book the real test only on gov.uk, at least ${T.bookAtLeastDaysAhead} days in advance, and sit it at one of more than ${T.centresOver} centres. Children under ${T.exemptUnder} and people aged ${T.exemptFromAge} or over do not need it.`;
+const chRows = h.chapters.map((c, i) => [`${i + 1}`, `<a href="${route(chapterPage[i], lang)}">${c}</a>`, h.inChapter(i)]);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={jsonLd} faqs={faqs} breadcrumbs={[]}>
+  <header class="mb-3">
+    <h1 class="mt-0 text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">Life in the UK Test: free mock tests, marked at {h.need} out of {T.questions}</h1>
+    <p class="mt-2 text-base text-navy-700 sm:text-lg">A full test of {T.questions} questions, the corrections explained, your score per chapter. No account, no email, nothing to pay.</p>
+  </header>
+  <div data-outil class="mb-4"><Tool tool={{ kind: 'quiz', props: { mode: 'exam' } }} primary={true} seedKey="home" /></div>
+  <Clamp text={resume} id="clamp-home" lang={lang} class="mb-3" />
+  <p class="mb-8 text-sm text-navy-600">Rules and fees checked on <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-GB')}</time> · {AUTHOR_NAME} · <a href={route('method', lang)} class="underline hover:text-navy-900">How questions and dates are built</a> · <a href={route('about', lang)} class="underline hover:text-navy-900">About this site</a></p>
+
+  <div class="prose prose-slate max-w-none">
+    <h2>From the test to a British passport: five stages</h2>
+    <p>The Life in the UK Test is often the first task people tackle, but it sits inside a longer path. Most applicants go through the same five stages, and each one has its own rule, its own document and its own calendar. Knowing them early avoids the two most common setbacks: booking the test far too late, and applying for citizenship a few weeks too soon. Each stage below comes with a small calculator; the pages linked from it go into the detail.</p>
+
+    <h3>1. Learn the handbook and measure yourself</h3>
+    <p>The test samples any part of the handbook, so revision works best chapter by chapter, with corrections after each answer, before moving to full mocks under time. The <a href={route('lt-practice', lang)}>chapter practice</a> serves sets of ten from one chapter; the <a href={route('lt-mock', lang)}>timed mock</a> rehearses the {T.minutes} minutes; the <a href={route('lt-tests', lang)}>numbered tests</a> keep the same questions each time so that progress shows. The estimate below turns your practice rate into a rough chance of reaching {h.need} on the day, assuming each answer is right at that rate.</p>
+  </div>
+  <div class="mb-6"><Tool tool={{ kind: 'mini:passchance' }} idPrefix="h1" /></div>
+  <div class="prose prose-slate max-w-none">
+    <h3>2. Book the test, then sit it</h3>
+    <p>Booking is done on the official gov.uk service and nowhere else: you need an email address, a debit or credit card and accepted ID, and the name you book with must match that ID exactly. The test must be booked at least {T.bookAtLeastDaysAhead} days ahead, and the {h.gbp(T.fee)} fee comes back only if you cancel at least {T.refundIfCancelHours} hours before. On the day you bring the same original ID, your photo is taken and you answer on a computer. A pass gives you a unique reference number for your application; a fail means booking and paying again, as many times as you need. Our <a href={route('lt-booking', lang)}>booking guide</a> and <a href={route('lt-exam-day', lang)}>test-day page</a> go step by step.</p>
+    <Fragment set:html={h.table(['The test in figures', ''], [
+      ['Questions', T.questions],
+      ['Time allowed', `${T.minutes} minutes`],
+      ['Pass mark', `${h.pc(T.passPercent / 100)}, so ${h.need} correct`],
+      ['Fee per sitting', h.gbp(T.fee)],
+      ['Book at least', `${T.bookAtLeastDaysAhead} days ahead, on gov.uk`],
+      ['Who is exempt', `under ${T.exemptUnder}, ${T.exemptFromAge} or over, some medical conditions`],
+    ], `Read on gov.uk on ${h.date(h.P.retrieved_at)}.`, ['l', 'r'])} />
+
+    <h3>3. Show your English at {E.level}</h3>
+    <p>The English requirement is separate from the Life in the UK Test, and both must be met. For citizenship it means speaking and listening at level {E.level}: nationals of a list of majority English-speaking countries meet it by their passport, a degree taught in English can count, and everyone else passes an approved secure English language test with one of four providers in the UK. A result is valid for {E.seltValidYears} years from the date it was awarded, unless you already used it for settlement. The <a href={route('en-test', lang)}>English requirement page</a> and the <a href={route('en-centres', lang)}>finder of approved centres</a>, {h.selt.centres} of them in {h.selt.cities} towns on the current Home Office list, cover the detail.</p>
+
+    <h3>4. Wait for the right date</h3>
+    <p>Most applicants naturalise under section 6(1): {N.route61.years} years in the UK, at most {h.num(N.route61.maxAbsenceDays)} days abroad in that time and {N.route61.maxAbsenceLast12m} in the last 12 months, and indefinite leave to remain or EU settled status held for {N.route61.ilrHeldMonths} months. The husband, wife or civil partner of a British citizen applies under section 6(2), with {N.route62spouse.years} years, {h.num(N.route62spouse.maxAbsenceDays)} days and no wait after settlement. The period is measured backwards from the day the Home Office receives your application, and only whole days abroad count. Enter the date you were granted settlement below for the end of the waiting period; the <a href={route('bc-date', lang)}>full date calculator</a> adds every trip and checks all the conditions together.</p>
+  </div>
+  <div class="mb-6"><Tool tool={{ kind: 'mini:ilrwait' }} idPrefix="h2" /></div>
+  <div class="prose prose-slate max-w-none">
+    <h3>5. Apply, pay, attend the ceremony</h3>
+    <p>The naturalisation application is made online. Since {h.date(F.effective)} the Home Office charges {h.gbp(F.naturalisation)} for the application and {h.gbp(F.ceremony)} for the ceremony, paid together, so {h.gbp(h.total)} per adult; an optional priority service adds {h.gbp(F.priority)} and usually brings a decision within {F.priorityWorkingDays} working days instead of the usual {N.decisionUsuallyMonths} months. Biometrics must follow within {N.biometricsDays} days of applying. Once approved, you have {N.ceremonyWithinDays} days from the invitation to attend a ceremony, where you take the oath or affirmation and the pledge and receive your certificate; only then are you British and able to apply for a passport.</p>
+  </div>
+  <div class="mb-6"><Tool tool={{ kind: 'mini:natcost' }} idPrefix="h3" /></div>
+  <div class="prose prose-slate max-w-none">
+    <h2>The handbook, chapter by chapter</h2>
+    <p>The handbook has five chapters, and our bank follows them so that you can see where your gaps are. The chapter on history covers the widest span, from the Stone Age to the end of the twentieth century, with many names and dates; the chapter on modern society mixes festivals, sport, the arts and inventions; the last chapter covers Parliament, elections, the courts in the three legal systems and everyday duties such as tax and driving. The test has no quota per chapter that gov.uk publishes, so our mocks take from each chapter in proportion to the bank.</p>
+    <Fragment set:html={h.table(['Chapter', 'Handbook chapter', 'Our questions'], chRows, `Bank of ${h.num(h.count)} questions written by ${AUTHOR_NAME}; open a chapter to see every question with its answer.`, ['r', 'l', 'r'])} />
+    <p>Two habits make revision faster. First, learn the history by period rather than as a list of dates: once you know that the Tudors came after the Wars of the Roses and before the Stuarts, a question about the Spanish Armada answers itself. Second, read the explanation of every question you miss, not only the right option: the explanation states the fact behind the question, and a related fact is often what the real test asks. Our <a href={route('lt-study', lang)}>study plan</a> turns the days left before your test into a number of questions a day.</p>
+
+    <h2>What this site does, and what it does not</h2>
+    <p>Everything here runs in your browser. The mock tests, the date calculator and the cost tools need no account and send nothing anywhere; a link you share carries only the test number or the dates you typed. We take no fee, place no booking and send no application: those happen only on gov.uk. The calculators judge the rules that can be measured, such as days abroad, waiting periods and fees; good character, the intention to live in the UK and any discretion are decided by a Home Office caseworker on the whole file.</p>
+    <p>Every figure on the site is read from one file of rules and fees taken from gov.uk, dated, and checked again each month against the Home Office fees table. When a rule changes, that file changes and every page follows. Two changes are announced but not yet in force on {h.date(h.P.retrieved_at)}: English at B2 for settlement on many routes from {h.date(E.settlementB2From)}, while citizenship stays at {E.level}; and the "earned settlement" reform, consulted on until 12 February 2026, with no final rule published yet. The <a href={route('bc-changes', lang)}>changes page</a> follows both.</p>
+
+    <h2>Every page of the site</h2>
+  </div>
+  <div class="not-prose grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-sommaire>
+    {GROUPS_ORDER.map((g) => (
+      <section><h3 class="mb-2 text-lg font-semibold text-navy-900">{groupLabel(g)}</h3><ul class="space-y-2 text-sm">{cards(g).map((c) => <li><a href={c.href} class="font-medium text-accent-700 underline">{c.name}</a><span class="block text-navy-700">{c.text}</span></li>)}</ul></section>
+    ))}
+  </div>
+  <div class="prose prose-slate mt-8 max-w-none">
+    <h2>How the questions are written</h2>
+    <p>The handbook is published by TSO for the Life in the UK Advisory Group and remains Crown copyright, so none of its text appears here. Each of our questions takes one fact the handbook states, asks about it in our own words with four options or a true-or-false choice, and explains the answer in a sentence or two. Questions whose answer depends on who holds an office today are left out, because the handbook was printed before several changes of office. The <a href={route('method', lang)}>method page</a> explains how a mock is drawn and marked.</p>
+    <Sources lang={lang} keys={['uk_test', 'uk_test_day', 'uk_ilr', 'uk_spouse', 'uk_guidance', 'uk_fees', 'uk_english', 'uk_selt']} />
+  </div>
+</PageLayout>
